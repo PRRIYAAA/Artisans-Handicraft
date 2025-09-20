@@ -3,11 +3,10 @@
 **Artisans-Handicraft** is an **AI-powered digital platform** that empowers artisans to **sell their products, teach workshops, and exchange skills**. By combining tradition with technology, the platform helps artisans increase their income, revive cultural heritage, and build sustainable digital communities.  
 
 ---
-### Demo
 
 ## 🌐 Demo
 
-👉 [Live Demo]([https://ai-tone-53431626.figma.site])  
+https://ai-tone-53431626.figma.site
 
 
 ## 🚀 Features
@@ -84,17 +83,13 @@ npm run dev
 ```
 
 ### Deployment
-
-Frontend (Next.js) → Vercel
-
-Backend (Express API) → Render / Railway
-
-Database → MongoDB AtlasFrontend (Next.js) → Vercel
-
-Backend (Express API) → Render / Railway
-
-Database → MongoDB Atlas
-
+```
+1. Frontend (Next.js) → Vercel
+2. Backend (Express API) → Render / Railway
+3. Database → MongoDB AtlasFrontend (Next.js) → Vercel
+4. Backend (Express API) → Render / Railway
+5. Database → MongoDB Atlas
+```
 
 ## 📜 License
 

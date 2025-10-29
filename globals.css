@@ -1,0 +1,407 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #FAF6F0;
+  --foreground: #2D2416;
+  --card: #FEFDFB;
+  --card-foreground: #2D2416;
+  --popover: #FEFDFB;
+  --popover-foreground: #2D2416;
+  --primary: #6B4423;
+  --primary-foreground: #FEFDFB;
+  --secondary: #EDE4DB;
+  --secondary-foreground: #2D2416;
+  --muted: #E8DFD4;
+  --muted-foreground: #6B5D52;
+  --accent: #F0EBE3;
+  --accent-foreground: #2D2416;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(107, 68, 35, 0.15);
+  --input: transparent;
+  --input-background: #F5EFE7;
+  --switch-background: #D4C4B0;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #A68A6D;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: #FEFDFB;
+  --sidebar-foreground: #2D2416;
+  --sidebar-primary: #6B4423;
+  --sidebar-primary-foreground: #FEFDFB;
+  --sidebar-accent: #F0EBE3;
+  --sidebar-accent-foreground: #2D2416;
+  --sidebar-border: #E8DFD4;
+  --sidebar-ring: #A68A6D;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Artisan-Inspired Background Patterns */
+
+/* Home Page: Gradient blend of honey and marmalade with faint paintbrush textures */
+.bg-artisan-home {
+  background: linear-gradient(135deg, #FFC30B 0%, #FF9505 40%, #D35400 100%);
+  position: relative;
+}
+
+.bg-artisan-home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 195, 11, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 149, 5, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(211, 84, 0, 0.1) 0%, transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.bg-artisan-home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 Q 15 5, 20 10 T 30 10 T 40 10 T 50 10' stroke='rgba(255,255,255,0.08)' stroke-width='2' fill='none'/%3E%3Cpath d='M10 30 Q 15 25, 20 30 T 30 30 T 40 30 T 50 30' stroke='rgba(255,255,255,0.06)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* About Page: Apricot parchment-style background with elegant craft patterns */
+.bg-artisan-about {
+  background: linear-gradient(180deg, #FBCEB1 0%, #FAF6F0 100%);
+  position: relative;
+}
+
+.bg-artisan-about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(181,101,29,0.03)' fill-rule='evenodd'%3E%3Ccircle cx='50' cy='50' r='4'/%3E%3Ccircle cx='25' cy='25' r='3'/%3E%3Ccircle cx='75' cy='75' r='3'/%3E%3Cpath d='M50 20 L55 30 L65 30 L57 37 L60 47 L50 40 L40 47 L43 37 L35 30 L45 30 Z' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.bg-artisan-about::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(181, 101, 29, 0.01) 2px,
+      rgba(181, 101, 29, 0.01) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(181, 101, 29, 0.01) 2px,
+      rgba(181, 101, 29, 0.01) 4px
+    );
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Marketplace/Products Page: Faint artisan tools with wooden texture */
+.bg-artisan-marketplace {
+  background: linear-gradient(165deg, #FAF6F0 0%, #FBCEB1 50%, #FAF6F0 100%);
+  position: relative;
+}
+
+.bg-artisan-marketplace::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(181,101,29,0.04)' stroke-width='1.5'%3E%3Ccircle cx='60' cy='40' r='15'/%3E%3Crect x='50' y='35' width='20' height='40' rx='2'/%3E%3Cpath d='M30 80 L35 70 L40 80'/%3E%3Cpath d='M80 80 L85 70 L90 80'/%3E%3Cellipse cx='60' cy='90' rx='25' ry='8'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.bg-artisan-marketplace::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(181, 101, 29, 0.015) 10px,
+      rgba(181, 101, 29, 0.015) 11px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 149, 5, 0.015) 10px,
+      rgba(255, 149, 5, 0.015) 11px
+    );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Classes Page: Warm gradient splashes with geometric craft symbols */
+.bg-artisan-classes {
+  background: linear-gradient(220deg, #FFC30B 0%, #FF9505 35%, #D35400 70%, #B5651D 100%);
+  position: relative;
+}
+
+.bg-artisan-classes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(ellipse at 10% 20%, rgba(255, 195, 11, 0.25) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 80%, rgba(211, 84, 0, 0.2) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 149, 5, 0.15) 0%, transparent 50%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.bg-artisan-classes::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(255,255,255,0.06)' fill-rule='evenodd'%3E%3Cpolygon points='40,10 50,30 70,30 55,42 60,62 40,50 20,62 25,42 10,30 30,30'/%3E%3Ccircle cx='20' cy='60' r='4'/%3E%3Ccircle cx='60' cy='20' r='3'/%3E%3Crect x='35' y='35' width='10' height='10' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Contact Page: Clean honey gradient with minimal embossed craft motifs */
+.bg-artisan-contact {
+  background: linear-gradient(180deg, #FFC30B 0%, #FBCEB1 50%, #FAF6F0 100%);
+  position: relative;
+}
+
+.bg-artisan-contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(181,101,29,0.05)' stroke-width='2'%3E%3Cpath d='M50 30 L55 45 L70 45 L58 54 L63 69 L50 60 L37 69 L42 54 L30 45 L45 45 Z'/%3E%3C/g%3E%3Cg fill='rgba(255,195,11,0.08)'%3E%3Ccircle cx='20' cy='80' r='2'/%3E%3Ccircle cx='80' cy='20' r='2'/%3E%3Ccircle cx='85' cy='85' r='1.5'/%3E%3Ccircle cx='15' cy='15' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.bg-artisan-contact::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Content overlay to ensure text readability */
+.artisan-content-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* Neutral Artisan Background for Detail/Dashboard Pages */
+.bg-artisan-neutral {
+  background: linear-gradient(135deg, #FAF6F0 0%, #FBCEB1 50%, #FAF6F0 100%);
+  position: relative;
+}
+
+.bg-artisan-neutral::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(181,101,29,0.02)' fill-rule='evenodd'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3Ccircle cx='20' cy='20' r='1.5'/%3E%3Ccircle cx='60' cy='60' r='1.5'/%3E%3Ccircle cx='60' cy='20' r='1'/%3E%3Ccircle cx='20' cy='60' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.bg-artisan-neutral::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(181, 101, 29, 0.008) 40px,
+      rgba(181, 101, 29, 0.008) 41px
+    );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Video Player Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
